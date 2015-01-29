@@ -1,0 +1,24 @@
+baseurl = "http://redstalker.com"
+languageCode = "en-us"
+title = "Redstalker"
+copyright = "Copyright (c) 2013 - 2015, Redstalker.com; All Rights Reserved."
+disqusShortname = "redstalker"
+MetaDataFormat = "yaml"
+
+[author]
+    name = "Nicholas Johns"
+
+[permalinks]
+    # Change the permalink format for the 'post' content type.
+    post = "/blog/:year/:month/:day/:title/"
+
+[indexes]
+    tag = "tags"
+    topic = "topics"
+    category = "categories"
+
+[params]
+	theme = "theme-base-08"
+	highlight = "sunburst"
+	github = "https://github.com/taion809"
+	twitter = "https://twitter.com/taion809"
