@@ -5,7 +5,7 @@
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://localhost:1313/index.xml/</link>
     <language>en-us</language>
-    <author>Nicholas Johns</author>
+    <author>Nicholas J</author>
     <copyright>Copyright (c) 2013 - 2015, Redstalker.com; All Rights Reserved.</copyright>
     <updated>Thu, 27 Nov 2014 13:57:00 UTC</updated>
     
@@ -13,7 +13,7 @@
       <title>Preparing Integers With Doctrine</title>
       <link>http://localhost:1313/blog/2014/11/27/Preparing-Integers-With-Doctrine/</link>
       <pubDate>Thu, 27 Nov 2014 13:57:00 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2014/11/27/Preparing-Integers-With-Doctrine/</guid>
       <description>&lt;p&gt;I recently had an issue with binding an integer to a select statement with doctrine and postgresql.&lt;/p&gt;
 
@@ -71,7 +71,7 @@
       <title>Getting Started with Gorilla MUX</title>
       <link>http://localhost:1313/blog/2014/04/19/Getting-Started-with-Gorilla-MUX/</link>
       <pubDate>Sat, 19 Apr 2014 16:05:12 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2014/04/19/Getting-Started-with-Gorilla-MUX/</guid>
       <description>
 
@@ -135,7 +135,7 @@ func main() {
       <title>Docker: Containing Madness</title>
       <link>http://localhost:1313/blog/2013/11/09/Docker-Containing-Madness/</link>
       <pubDate>Sat, 09 Nov 2013 01:31:43 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2013/11/09/Docker-Containing-Madness/</guid>
       <description>
 
@@ -266,7 +266,7 @@ server {
       <title>Splitting Mysql Dumps</title>
       <link>http://localhost:1313/blog/2013/09/21/Splitting-Mysql-Dumps/</link>
       <pubDate>Sat, 21 Sep 2013 10:27:15 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2013/09/21/Splitting-Mysql-Dumps/</guid>
       <description>
 
@@ -345,7 +345,7 @@ mysql -h host-u user -p&#39;password&#39; db_name &amp;lt; /path/to/backup.sql
       <title>Jenkins CI Deployment with Bitbucket</title>
       <link>http://localhost:1313/blog/2013/08/20/Jenkins-CI-Deployment-with-Bitbucket/</link>
       <pubDate>Tue, 20 Aug 2013 13:23:00 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2013/08/20/Jenkins-CI-Deployment-with-Bitbucket/</guid>
       <description>
 
@@ -455,6 +455,54 @@ git config --global user.name &amp;quot;jenkins&amp;quot;
 &lt;p&gt;If everything was successful and the planets are aligned you should see your repo pull and if you configured any scripts they should run.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m sure there are others that have a better, faster way to accomplish this but this is simply how I did it and hopefully this helps someone.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>http://localhost:1313/license/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 UTC</pubDate>
+      <author>Nicholas J</author>
+      <guid>http://localhost:1313/license/</guid>
+      <description>
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Content license&lt;/h3&gt;
+
+&lt;p&gt;All non-code blog content is licensed under &lt;a href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons BY-NC-SA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Code license&lt;/h3&gt;
+
+&lt;p&gt;All source code files and snippets found on this blog, unless otherwise explicitly noted, are licensed under the terms below.&lt;/p&gt;
+
+&lt;p&gt;Copyright &amp;copy; 2013, Nicholas Johns
+All rights reserved.&lt;/p&gt;
+
+&lt;p&gt;Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Neither the name of Redstalker, nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &amp;ldquo;AS IS&amp;rdquo;
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&lt;/p&gt;
 </description>
     </item>
     

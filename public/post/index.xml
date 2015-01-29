@@ -5,7 +5,7 @@
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://localhost:1313/post/index.xml/</link>
     <language>en-us</language>
-    <author>Nicholas Johns</author>
+    <author>Nicholas J</author>
     <copyright>Copyright (c) 2013 - 2015, Redstalker.com; All Rights Reserved.</copyright>
     <updated>Thu, 27 Nov 2014 13:57:00 UTC</updated>
     
@@ -13,7 +13,7 @@
       <title>Preparing Integers With Doctrine</title>
       <link>http://localhost:1313/blog/2014/11/27/Preparing-Integers-With-Doctrine/</link>
       <pubDate>Thu, 27 Nov 2014 13:57:00 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2014/11/27/Preparing-Integers-With-Doctrine/</guid>
       <description>&lt;p&gt;I recently had an issue with binding an integer to a select statement with doctrine and postgresql.&lt;/p&gt;
 
@@ -71,7 +71,7 @@
       <title>Getting Started with Gorilla MUX</title>
       <link>http://localhost:1313/blog/2014/04/19/Getting-Started-with-Gorilla-MUX/</link>
       <pubDate>Sat, 19 Apr 2014 16:05:12 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2014/04/19/Getting-Started-with-Gorilla-MUX/</guid>
       <description>
 
@@ -135,7 +135,7 @@ func main() {
       <title>Docker: Containing Madness</title>
       <link>http://localhost:1313/blog/2013/11/09/Docker-Containing-Madness/</link>
       <pubDate>Sat, 09 Nov 2013 01:31:43 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2013/11/09/Docker-Containing-Madness/</guid>
       <description>
 
@@ -266,7 +266,7 @@ server {
       <title>Splitting Mysql Dumps</title>
       <link>http://localhost:1313/blog/2013/09/21/Splitting-Mysql-Dumps/</link>
       <pubDate>Sat, 21 Sep 2013 10:27:15 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2013/09/21/Splitting-Mysql-Dumps/</guid>
       <description>
 
@@ -345,7 +345,7 @@ mysql -h host-u user -p&#39;password&#39; db_name &amp;lt; /path/to/backup.sql
       <title>Jenkins CI Deployment with Bitbucket</title>
       <link>http://localhost:1313/blog/2013/08/20/Jenkins-CI-Deployment-with-Bitbucket/</link>
       <pubDate>Tue, 20 Aug 2013 13:23:00 UTC</pubDate>
-      <author>Nicholas Johns</author>
+      <author>Nicholas J</author>
       <guid>http://localhost:1313/blog/2013/08/20/Jenkins-CI-Deployment-with-Bitbucket/</guid>
       <description>
 

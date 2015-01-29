@@ -6,7 +6,7 @@ disqusShortname = "redstalker"
 MetaDataFormat = "yaml"
 
 [author]
-    name = "Nicholas Johns"
+    name = "Nicholas J"
 
 [permalinks]
     # Change the permalink format for the 'post' content type.
@@ -18,7 +18,12 @@ MetaDataFormat = "yaml"
     category = "categories"
 
 [params]
+    defaultDescription = "Another random programmer's blog"
+    defaultKeywords = "nicholas johns,home,website,blog,golang,docker,php"
+    tagline = "Another random programmer's blog"
 	theme = "theme-base-08"
 	highlight = "sunburst"
+    googleAnalytics = "UA-43022143-1"
+    gravatarHash = "dc6e8fcb5d2bf3a94b850f295b4102c6"
 	github = "https://github.com/taion809"
 	twitter = "https://twitter.com/taion809"
