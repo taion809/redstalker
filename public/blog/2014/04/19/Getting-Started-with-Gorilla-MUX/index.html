@@ -10,20 +10,23 @@
   <title>Getting Started with Gorilla MUX &middot; Nicholas J</title>
 
   
-  <link rel="stylesheet" href="http://localhost:1313/css/poole.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/hyde.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/poole-overrides.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/hyde-overrides.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/hyde-x.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/highlight/sunburst.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="http://redstalker.com/css/poole.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/hyde.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link href="/favicon.png" rel="icon">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://redstalker.com/apple-touch-icon-144-precomposed.png">
+  <link href="http://redstalker.com/favicon.png" rel="icon">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="Redstalker &middot; Nicholas J" />
+  
+  
+  
 
   <meta name="description" content="Quick intro to the Gorilla MUX package.">
   <meta name="keywords" content="nicholas johns,home,website,blog,golang,docker,php">
@@ -33,37 +36,40 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <img src="http://www.gravatar.com/avatar/dc6e8fcb5d2bf3a94b850f295b4102c6?s=200" alt="gravatar">
+      <img src="https://www.gravatar.com/avatar/dc6e8fcb5d2bf3a94b850f295b4102c6?s=200" alt="gravatar">
       <h1>Nicholas J</h1>
-      <p class="lead">Another random programmer&#39;s blog</p>
+      <p class="lead">Another random programmer&rsquo;s blog</p>
     </div>
 
     <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="http://localhost:1313/">Blog</a></li>
+      <li class="sidebar-nav-item"><a href="http://redstalker.com/">Blog</a></li>
       
     </ul>
 
     <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="https://github.com/taion809">GitHub</a></li>
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/taion809"><i class="fa fa-github-square fa-3x"></i></a>
       
       
       
-      <li class="sidebar-nav-item"><a href="https://twitter.com/taion809">Twitter</a></li>
+      
+      <a href="https://twitter.com/taion809"><i class="fa fa-twitter-square fa-3x"></i></a>
+      </li>
     </ul>
 
-    <p>Copyright &copy; 2015 <a href="http://localhost:1313/license">License</a><br/>
-       Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+    <p>Copyright &copy; 2015 <a href="http://redstalker.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
   </div>
 </div>
+
 
 <div class="content container">
   <div class="post">
     <h1>Getting Started with Gorilla MUX</h1>
-    <span class="post-date">Apr 19, 2014 &middot; 2 minute read &middot; <a href="http://localhost:1313/blog/2014/04/19/Getting-Started-with-Gorilla-MUX/#disqus_thread">Comments</a>
+    <span class="post-date">Apr 19, 2014 &middot; 2 minute read &middot; <a href="http://redstalker.com/blog/2014/04/19/getting-started-with-gorilla-mux/#disqus_thread">Comments</a>
     
     <br/>
-    
-    <a class="label" href="http://localhost:1313/categories/Development">Development</a>
+    <a class="label" href="http://redstalker.com/categories/development">Development</a>
     </span>
     
 
@@ -71,15 +77,15 @@
 
 <p>For this I will be using <a href="http://www.gorillatoolkit.org/pkg/mux">Gorilla MUX</a>.  If you haven&rsquo;t taken a look at the Gorilla toolkit yet I highly recommend it.  I really enjoy using it, the use as individual components really resonates with me and my style of coding.</p>
 
-<h3 id="toc_0">Setup</h3>
+<h3 id="setup:9a54963c5680f517156b952d129fa770">Setup</h3>
 
 <p>Setup for this is pretty fast, <code>go get github.com/gorilla/mux</code></p>
 
-<h3 id="toc_1">The Meat and Potatos</h3>
+<h3 id="the-meat-and-potatos:9a54963c5680f517156b952d129fa770">The Meat and Potatos</h3>
 
 <p>The <code>main.go</code> for this is pretty simple, but if you haven&rsquo;t used <a href="http://golang.org/pkg/net/http/">net/http</a> from the Golang standard library you might be scratching your head trying to figure out what&rsquo;s going on.</p>
 
-<h5 id="toc_2">Example main.go</h5>
+<h5 id="example-main-go:9a54963c5680f517156b952d129fa770">Example main.go</h5>
 
 <pre><code>package main
 
@@ -149,7 +155,7 @@ var disqus_shortname = "redstalker";
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-<script src="http://localhost:1313/js/highlight.pack.js"></script>
+<script src="http://redstalker.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 <script>
@@ -161,3 +167,4 @@ var disqus_shortname = "redstalker";
 
 </body>
 </html>
+

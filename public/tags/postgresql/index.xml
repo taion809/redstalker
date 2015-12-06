@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Postgresql on Redstalker </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/tags/postgresql/index.xml/</link>
+    <title>Postgresql on Redstalker</title>
+    <link>http://redstalker.com/tags/postgresql/</link>
+    <description>Recent content in Postgresql on Redstalker</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Nicholas J</author>
     <copyright>Copyright (c) 2013 - 2015, Redstalker.com; All Rights Reserved.</copyright>
-    <updated>Thu, 27 Nov 2014 13:57:00 UTC</updated>
+    <lastBuildDate>Thu, 27 Nov 2014 13:57:00 +0000</lastBuildDate>
+    <atom:link href="http://redstalker.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Preparing Integers With Doctrine</title>
-      <link>http://localhost:1313/blog/2014/11/27/Preparing-Integers-With-Doctrine/</link>
-      <pubDate>Thu, 27 Nov 2014 13:57:00 UTC</pubDate>
-      <author>Nicholas J</author>
-      <guid>http://localhost:1313/blog/2014/11/27/Preparing-Integers-With-Doctrine/</guid>
+      <link>http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/</link>
+      <pubDate>Thu, 27 Nov 2014 13:57:00 +0000</pubDate>
+      
+      <guid>http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/</guid>
       <description>&lt;p&gt;I recently had an issue with binding an integer to a select statement with doctrine and postgresql.&lt;/p&gt;
 
 &lt;p&gt;Given the following:&lt;/p&gt;

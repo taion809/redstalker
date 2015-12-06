@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Install PHP7 &middot; Nicholas J</title>
+
+  
+  <link rel="stylesheet" href="http://redstalker.com/css/poole.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/hyde.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://redstalker.com/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://redstalker.com/apple-touch-icon-144-precomposed.png">
+  <link href="http://redstalker.com/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="PHP7 was released this month, exciting! So how do you get ahold of it?">
+  <meta name="keywords" content="nicholas johns,home,website,blog,golang,docker,php">
+  
+</head>
+<body class="theme-base-08">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="https://www.gravatar.com/avatar/dc6e8fcb5d2bf3a94b850f295b4102c6?s=200" alt="gravatar">
+      <h1>Nicholas J</h1>
+      <p class="lead">Another random programmer&rsquo;s blog</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://redstalker.com/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/taion809"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      
+      
+      <a href="https://twitter.com/taion809"><i class="fa fa-twitter-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    <p>Copyright &copy; 2015 <a href="http://redstalker.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Install PHP7</h1>
+    <span class="post-date">Dec 6, 2015 &middot; 2 minute read &middot; <a href="http://redstalker.com/blog/2015/12/06/install-php7/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="http://redstalker.com/categories/development">Development</a>
+    </span>
+    
+
+<p><a href="http://php.net/archive/2015.php#id2015-12-03-1">PHP7 was released this month</a>, exciting! So how do you get ahold of it?</p>
+
+<p>There are a couple of options available depending on what operating system you are running.</p>
+
+<h2 id="automated-install:2da100cb5bfc7d57761e4a46417cd7f3">Automated Install</h2>
+
+<h3 id="puphpet:2da100cb5bfc7d57761e4a46417cd7f3">PuPHPet</h3>
+
+<p>The easiest way to get going with php7 is to head over to <a href="https://puphpet.com">puphpet.com</a> and configure a build.  Unfortunately at the time of this writing the only available operating system is Ubuntu 14.04.</p>
+
+<h2 id="manual:2da100cb5bfc7d57761e4a46417cd7f3">Manual</h2>
+
+<p>If you wish to install php7 yourself there are more options.</p>
+
+<h3 id="ubuntu:2da100cb5bfc7d57761e4a46417cd7f3">Ubuntu</h3>
+
+<p>Ondřej Surý has provided <a href="https://launchpad.net/~ondrej/+archive/ubuntu/php-7.0">a great PPA</a> for ubuntu since php5, it&rsquo;s easy to use and provides good default configurations.  At the time of this writing Mr. Surý&rsquo;s PPA supports Ubuntu &gt;= 14.04.</p>
+
+<pre><code class="language-bash">sudo apt-add-repository ppa:ondrej/php-7.0
+sudo apt-get update
+sudo apt-get install php7.0
+</code></pre>
+
+<h3 id="centos:2da100cb5bfc7d57761e4a46417cd7f3">CentOS</h3>
+
+<p>With CentOS &gt;= 6.5 there are a couple of additional places to find PHP7.</p>
+
+<h4 id="remi:2da100cb5bfc7d57761e4a46417cd7f3">Remi</h4>
+
+<p>PHP7 with extensions is available on the popular <a href="http://rpms.famillecollet.com/">remi yum repository</a>.</p>
+
+<h5 id="example-for-centos-7:2da100cb5bfc7d57761e4a46417cd7f3">Example for CentOS 7</h5>
+
+<pre><code>sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+sudo yum install --enablerepo=remi --enablerepo=remi-php70 php
+</code></pre>
+
+<h4 id="webtatic:2da100cb5bfc7d57761e4a46417cd7f3">Webtatic</h4>
+
+<p><a href="https://webtatic.com/packages/php70/">Webtatic</a> has PHP7 available for install for CentOS &gt;= 6.7</p>
+
+<h5 id="example-for-centos-7-1:2da100cb5bfc7d57761e4a46417cd7f3">Example for CentOS 7</h5>
+
+<pre><code>sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+sudo yum install --enablerepo=remi --enablerepo=remi-php70 php
+</code></pre>
+
+<h2 id="example-configuration:2da100cb5bfc7d57761e4a46417cd7f3">Example Configuration</h2>
+
+<p>The following example configurations setup php7 fpm, apache 2.4, and <a href="http://lumen.laravel.com">lumen</a>.</p>
+
+<h4 id="install-php7:2da100cb5bfc7d57761e4a46417cd7f3">Install PHP7</h4>
+
+<pre><code class="language-bash">sudo apt-add-repository ppa:ondrej/php-7.0
+sudo apt-get update
+sudo apt-get install php7.0-fpm php7.0-common php7.0-intl
+</code></pre>
+
+<h4 id="composer:2da100cb5bfc7d57761e4a46417cd7f3">Composer</h4>
+
+<p>You need <a href="https://getcomposer.org/download">composer</a> to get started.</p>
+
+<pre><code class="language-bash">curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+</code></pre>
+
+<h4 id="lumen:2da100cb5bfc7d57761e4a46417cd7f3">Lumen</h4>
+
+<p>Lumen is a &ldquo;microframework&rdquo; provided by the Laravel project.</p>
+
+<pre><code class="language-bash">composer create-project laravel/lumen /var/www/app --prefer-dist
+</code></pre>
+
+<h4 id="php-fpm-pool:2da100cb5bfc7d57761e4a46417cd7f3">php-fpm pool</h4>
+
+<pre><code class="language-ini">listen = 127.0.0.1:9000
+</code></pre>
+
+<h4 id="apache-vhost:2da100cb5bfc7d57761e4a46417cd7f3">Apache vhost</h4>
+
+<p>Additional options and steps can be found <a href="https://wiki.apache.org/httpd/PHP-FPM">here</a>.</p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/app/public
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        &lt;Directory &quot;/var/www/app/public&quot;&gt;
+                Order allow,deny
+                Allow from all
+                Require all granted
+        &lt;/Directory&gt;
+
+        ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/app/public/$1
+        DirectoryIndex /index.php index.php
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<h4 id="vagrantfile:2da100cb5bfc7d57761e4a46417cd7f3">Vagrantfile</h4>
+
+<p>This is a sample vagrantfile I used to do the above.</p>
+
+<pre><code class="language-ruby">Vagrant.configure(2) do |config|
+  config.vm.box = &quot;ubuntu/trusty64&quot;
+  config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 5555
+  config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;
+  config.vm.synced_folder &quot;./app&quot;, &quot;/var/www/app&quot;, type: &quot;nfs&quot;
+  config.vm.provider &quot;virtualbox&quot; do |vb|
+   vb.memory = &quot;1024&quot;
+  end
+end
+</code></pre>
+
+<p>I hope it helps :)</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "redstalker";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "redstalker";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://redstalker.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-43022143-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
