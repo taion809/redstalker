@@ -2,7 +2,7 @@
 date: 2014-04-19T16:05:12Z
 title: "Getting Started with Gorilla MUX"
 description: "Quick intro to the Gorilla MUX package."
-tags: [ "go", "http" ]
+tags: [ "golang", "http" ]
 Section: blog
 categories:
   - "Development"

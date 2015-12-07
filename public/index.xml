@@ -7,8 +7,100 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2013 - 2015, Redstalker.com; All Rights Reserved.</copyright>
-    <lastBuildDate>Sun, 06 Dec 2015 14:24:50 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 07 Dec 2015 09:00:43 -0500</lastBuildDate>
     <atom:link href="http://redstalker.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>basic sqlx relation scanning</title>
+      <link>http://redstalker.com/blog/2015/12/07/basic-sqlx-relation-scanning/</link>
+      <pubDate>Mon, 07 Dec 2015 09:00:43 -0500</pubDate>
+      
+      <guid>http://redstalker.com/blog/2015/12/07/basic-sqlx-relation-scanning/</guid>
+      <description>&lt;p&gt;Very quick, I wanted to use &lt;code&gt;Get&lt;/code&gt; with a query that contained other tables.  The documentation does not have a lot of examples so here we go.&lt;/p&gt;
+
+&lt;p&gt;Given the following database schema&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;CREATE EXTENSION pgcrypto;
+
+CREATE TABLE content_types (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP DEFAULT NULL
+);
+
+CREATE TABLE content (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content_type_id UUID REFERENCES content_types(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP DEFAULT NULL
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I want to query and return a content row with its content_type, here is the struct I want to return.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;github.com/jmoiron/sqlx&amp;quot;
+	_ &amp;quot;github.com/lib/pq&amp;quot;
+	&amp;quot;log&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+type ContentType struct {
+	Id        string     `db:&amp;quot;id&amp;quot;`
+	Name      string     `db:&amp;quot;name&amp;quot;`
+	CreatedAt *time.Time `db:&amp;quot;created_at&amp;quot;`
+	UpdatedAt *time.Time `db:&amp;quot;updated_at&amp;quot;`
+	DeletedAt *time.Time `db:&amp;quot;deleted_at&amp;quot;`
+}
+
+type Content struct {
+	Id          string     `db:&amp;quot;id&amp;quot;`
+	Content     string     `db:&amp;quot;content&amp;quot;`
+	CreatedAt   *time.Time `db:&amp;quot;created_at&amp;quot;`
+	UpdatedAt   *time.Time `db:&amp;quot;updated_at&amp;quot;`
+	DeletedAt   *time.Time `db:&amp;quot;deleted_at&amp;quot;`
+	ContentType `db:&amp;quot;content_type&amp;quot;`
+}
+
+func main() {
+	connection, err := sqlx.Connect(&amp;quot;postgres&amp;quot;, &amp;quot;postgres://user:pass@localhost:5432/database&amp;quot;)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer connection.Close()
+
+	query := `
+		SELECT content.*,
+			   content_types.id AS &amp;quot;content_type.id&amp;quot;,
+			   content_types.name AS &amp;quot;content_type.name&amp;quot;,
+			   content_types.created_at AS &amp;quot;content_type.created_at&amp;quot;,
+			   content_types.updated_at AS &amp;quot;content_type.updated_at&amp;quot;
+		FROM content
+		JOIN content_types ON content.content_type_id = content_types.id
+		WHERE content.id = $1`
+
+	var content Content
+	err = connection.Get(&amp;amp;content, query, &amp;quot;UUID-ID-HERE&amp;quot;)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf(&amp;quot;Fetched content: %s of type %s\n&amp;quot;, content.Content, content.ContentType.Name)
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I hope this helps :)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Install PHP7</title>
