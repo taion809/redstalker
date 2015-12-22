@@ -7,6 +7,9 @@ MetaDataFormat = "yaml"
 
 [author]
     name = "Nicholas J"
+    github = "taion809"
+    twitter = "taion809"
+    gaID = "UA-43022143-1"
 
 [permalinks]
     # Change the permalink format for the 'post' content type.

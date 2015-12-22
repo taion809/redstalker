@@ -1,209 +1,331 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Redstalker &middot; Nicholas J</title>
-
-  
-  <link rel="stylesheet" href="http://redstalker.com/css/poole.css">
-  <link rel="stylesheet" href="http://redstalker.com/css/hyde.css">
-  <link rel="stylesheet" href="http://redstalker.com/css/poole-overrides.css">
-  <link rel="stylesheet" href="http://redstalker.com/css/hyde-overrides.css">
-  <link rel="stylesheet" href="http://redstalker.com/css/hyde-x.css">
-  <link rel="stylesheet" href="http://redstalker.com/css/highlight/sunburst.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <title>Redstalker</title>
+  <meta name="description" content="Redstalker">
+  <meta name="author" content="Nicholas J">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://redstalker.com/touch-icon-144-precomposed.png">
-  <link href="http://redstalker.com/favicon.png" rel="icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="http://redstalker.comcss/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://redstalker.comcss/custom.css">
 
   
   
+  <link rel="stylesheet" href="http://redstalker.comhighlight/styles/sunburst.css">
   
-  <link href="http://redstalker.com/index.xml" rel="alternate" type="application/rss+xml" title="Redstalker &middot; Nicholas J" />
+  <script src="http://redstalker.comhighlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
-  <meta name="description" content="Another random programmer&#39;s blog">
-  <meta name="keywords" content="nicholas johns,home,website,blog,golang,docker,php">
-  
 </head>
-<body class="theme-base-08">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      
-        <img src="https://www.gravatar.com/avatar/dc6e8fcb5d2bf3a94b850f295b4102c6?s=200"
-             alt="gravatar" title="Nicholas J">
-      
-      <h1>Nicholas J</h1>
-      <p class="lead">Another random programmer&rsquo;s blog</p>
+<body>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">Redstalker</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://redstalker.comcategories/development" class="pure-menu-link">Development</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://redstalker.comabout/" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">Redstalker</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://redstalker.comcategories/development" class="pure-menu-link">Development</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://redstalker.comabout" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="http://redstalker.com/">Blog</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/taion809"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      
-      
-      
-      
-      <a href="https://twitter.com/taion809"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      
-      </li>
-    </ul>
-
-    
-
-    <p>Copyright &copy; 2015 <a href="http://redstalker.com/license/">License</a><br/>
-       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
-  </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
 </div>
 
 
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2015/12/07/basic-sqlx-relation-scanning/">basic sqlx relation scanning</a>
-      </h1>
-      <span class="post-date">Dec 7, 2015 &middot; 2 minute read &middot; <a href="http://redstalker.com/blog/2015/12/07/basic-sqlx-relation-scanning/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>Really basic relationship scanning with jmoiron/sqlx, I&#39;d rather not forget.</p>
-      <a href="http://redstalker.com/blog/2015/12/07/basic-sqlx-relation-scanning/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2015/12/06/install-php7/">Install PHP7</a>
-      </h1>
-      <span class="post-date">Dec 6, 2015 &middot; 2 minute read &middot; <a href="http://redstalker.com/blog/2015/12/06/install-php7/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>PHP7 was released this month, exciting! So how do you get ahold of it?</p>
-      <a href="http://redstalker.com/blog/2015/12/06/install-php7/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/">Preparing Integers With Doctrine</a>
-      </h1>
-      <span class="post-date">Nov 27, 2014 &middot; 1 minute read &middot; <a href="http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>How do you add integers as prepared statements to a select?</p>
-      <a href="http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2014/04/19/getting-started-with-gorilla-mux/">Getting Started with Gorilla MUX</a>
-      </h1>
-      <span class="post-date">Apr 19, 2014 &middot; 2 minute read &middot; <a href="http://redstalker.com/blog/2014/04/19/getting-started-with-gorilla-mux/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>Quick intro to the Gorilla MUX package.</p>
-      <a href="http://redstalker.com/blog/2014/04/19/getting-started-with-gorilla-mux/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2013/11/09/docker-containing-madness/">Docker: Containing Madness</a>
-      </h1>
-      <span class="post-date">Nov 9, 2013 &middot; 3 minute read &middot; <a href="http://redstalker.com/blog/2013/11/09/docker-containing-madness/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>Use Docker to containerize crazy legacy software.</p>
-      <a href="http://redstalker.com/blog/2013/11/09/docker-containing-madness/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2013/09/21/splitting-mysql-dumps/">Splitting Mysql Dumps</a>
-      </h1>
-      <span class="post-date">Sep 21, 2013 &middot; 3 minute read &middot; <a href="http://redstalker.com/blog/2013/09/21/splitting-mysql-dumps/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>Setting up Jenkins and Bitbucket for fun and adventure.</p>
-      <a href="http://redstalker.com/blog/2013/09/21/splitting-mysql-dumps/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://redstalker.com/blog/2013/08/20/jenkins-ci-deployment-with-bitbucket/">Jenkins CI Deployment with Bitbucket</a>
-      </h1>
-      <span class="post-date">Aug 20, 2013 &middot; 4 minute read &middot; <a href="http://redstalker.com/blog/2013/08/20/jenkins-ci-deployment-with-bitbucket/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://redstalker.com/categories/development">Development</a>
-      </span>
-      
-      <p>Setting up Jenkins and Bitbucket for fun and adventure.</p>
-      <a href="http://redstalker.com/blog/2013/08/20/jenkins-ci-deployment-with-bitbucket/">Read On &rarr;</a>
-      
-    </div>
-    
-    
-    
-  </div>
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+	  <p class="posts-name">Recent posts:</p>
+
+	  <ul class="posts">
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2015/12/07/basic-sqlx-relation-scanning/">basic sqlx relation scanning</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2015-12-07T09:00:43-05:00" class="post-list timeago">2015-12-07T09:00:43-05:00</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/golang">golang</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2015/12/06/install-php7/">Install PHP7</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2015-12-06T14:24:50-05:00" class="post-list timeago">2015-12-06T14:24:50-05:00</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/php">php</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/">Preparing Integers With Doctrine</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2014-11-27T13:57:00Z" class="post-list timeago">2014-11-27T13:57:00Z</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/doctrine">doctrine</a> <a href="http://redstalker.comtags/postgresql">postgresql</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2014/04/19/getting-started-with-gorilla-mux/">Getting Started with Gorilla MUX</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2014-04-19T16:05:12Z" class="post-list timeago">2014-04-19T16:05:12Z</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/golang">golang</a> <a href="http://redstalker.comtags/http">http</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2013/11/09/docker-containing-madness/">Docker: Containing Madness</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-11-09T01:31:43Z" class="post-list timeago">2013-11-09T01:31:43Z</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/docker">docker</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2013/09/21/splitting-mysql-dumps/">Splitting Mysql Dumps</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-09-21T10:27:15Z" class="post-list timeago">2013-09-21T10:27:15Z</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/mysql">mysql</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		<li>
+		  <a href="http://redstalker.com/blog/2013/08/20/jenkins-ci-deployment-with-bitbucket/">Jenkins CI Deployment with Bitbucket</a>
+
+		  <p class="footnote">
+			submitted <time datetime="2013-08-20T13:23:00Z" class="post-list timeago">2013-08-20T13:23:00Z</time>
+
+			
+			to
+			
+
+			
+			tags:[ <a href="http://redstalker.comtags/git">git</a> <a href="http://redstalker.comtags/jenkins">jenkins</a> ]
+			
+
+			
+			categories:[ <a href="http://redstalker.comcategories/development">Development</a> ]
+			
+
+			
+
+		  </p>
+		</li>
+		
+		
+		
+		
+	  </ul>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">Nicholas J:</li>
+
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://github.com/taion809" class="pure-menu-link">GitHub</a>
+                </li>
+                
+
+                
+
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://twitter.com/taion809" class="pure-menu-link">Twitter</a>
+                </li>
+                
+                
+                <li class="pure-menu-item">
+                    <a href="/license"  class="pure-menu-link">Copyright (c) 2013 - 2015, Redstalker.com; All Rights Reserved.</a>
+                </li>
+                
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
 </div>
 
 
+<script src="http://redstalker.comjs/jquery.min.js" type="text/javascript"></script>
+<script src="http://redstalker.comjs/jquery.timeago.js" type="text/javascript"></script>
 <script type="text/javascript">
-var disqus_shortname = "redstalker";
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
 </script>
 
-<script src="http://redstalker.com/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
 <script>
-  var _gaq=[['_setAccount','UA-43022143-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43022143-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
 </body>
