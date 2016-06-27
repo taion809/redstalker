@@ -20,15 +20,15 @@
 
 &lt;p&gt;Recently we had one of our important clients come to us with a node.js application they needed updated.  I&amp;rsquo;m not sure of the circumstances surrounding this application but it looked and felt like a ball of spaghetti was thrown in my face.  I punted the modifications to another developer in favor of doing the deployment with docker and supervisord.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-problem:6550cc4e8b37860784560f45e5fac367&#34;&gt;The Problem&lt;/h3&gt;
+&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
 
 &lt;p&gt;This node.js application has many assumptions about libraries and file locations that make me cringe, for example it simply won&amp;rsquo;t work unless packages are installed globally &lt;strong&gt;and&lt;/strong&gt; locally.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-solution:6550cc4e8b37860784560f45e5fac367&#34;&gt;The Solution&lt;/h3&gt;
+&lt;h3 id=&#34;the-solution&#34;&gt;The Solution&lt;/h3&gt;
 
 &lt;p&gt;Build a docker image containing the application so that it could be deployed without touching anything outside of its container, think like a chroot.&lt;/p&gt;
 
-&lt;h3 id=&#34;let-s-do-it:6550cc4e8b37860784560f45e5fac367&#34;&gt;Let&amp;rsquo;s Do It!&lt;/h3&gt;
+&lt;h3 id=&#34;let-s-do-it&#34;&gt;Let&amp;rsquo;s Do It!&lt;/h3&gt;
 
 &lt;p&gt;The application we will be using can be found in my &lt;a href=&#34;https://github.com/taion809/hello-node&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
 
@@ -132,7 +132,7 @@ server {
 
 &lt;p&gt;Please let me know if you see errors, have corrections, or know a better way.&lt;/p&gt;
 
-&lt;h3 id=&#34;references:6550cc4e8b37860784560f45e5fac367&#34;&gt;References&lt;/h3&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://docker.io&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;

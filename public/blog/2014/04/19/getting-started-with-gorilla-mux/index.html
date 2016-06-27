@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>License</title>
+  <title>Getting Started with Gorilla MUX</title>
 
   <meta name="author" content="Nicholas J" />
   
   
-  <meta name="description" content="License for the contents of this website and blog">
+  <meta name="description" content="Quick intro to the Gorilla MUX package.">
   
 
   <meta name="generator" content="Hugo 0.16" />
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="http://redstalker.com/css/pygment_highlights.css" />
   
   
-  <meta property="og:title" content="License" />
+  <meta property="og:title" content="Getting Started with Gorilla MUX" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/" />
   <meta property="og:image" content="" />
@@ -79,10 +79,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>License</h1>
+        <div class="post-heading">
+          <h1>Getting Started with Gorilla MUX</h1>
       
       
+      
+      <span class="post-meta">Posted on April 19, 2014</span>
       
         </div>
       </div>
@@ -94,57 +96,89 @@
 
 
 
-<div class="container" role="main">
+<div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+          
+
+<p>This is going to be short and sweet.  I have been looking at getting into Go for awhile but lacked incentive.  That has, as of a week ago, changed and it&rsquo;s full speed ahead.</p>
+
+<p>For this I will be using <a href="http://www.gorillatoolkit.org/pkg/mux">Gorilla MUX</a>.  If you haven&rsquo;t taken a look at the Gorilla toolkit yet I highly recommend it.  I really enjoy using it, the use as individual components really resonates with me and my style of coding.</p>
+
+<h3 id="setup">Setup</h3>
+
+<p>Setup for this is pretty fast, <code>go get github.com/gorilla/mux</code></p>
+
+<h3 id="the-meat-and-potatos">The Meat and Potatos</h3>
+
+<p>The <code>main.go</code> for this is pretty simple, but if you haven&rsquo;t used <a href="http://golang.org/pkg/net/http/">net/http</a> from the Golang standard library you might be scratching your head trying to figure out what&rsquo;s going on.</p>
+
+<h5 id="example-main-go">Example main.go</h5>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;github.com/gorilla/mux&quot;
+    &quot;net/http&quot;
+)
+
+func ArticleHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(&quot;Article URI&quot;)
+}
+
+func main() {
+    // Create a new Router instance
+    router := mux.NewRouter()
+
+    // Add the URI /article to be handled by the ArticleHandler method
+    router.HandleFunc(&quot;/article&quot;, ArticleHandler)
+
+    // Add the URI / to be handled by a closure
+    router.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {
+        fmt.Println(&quot;Root URI&quot;)
+    })
+
+    // Pass our router to net/http
+    http.Handle(&quot;/&quot;, router)
+
+    // Listen and serve on localhost:8080
+    http.ListenAndServe(&quot;:8080&quot;, nil)
+}
+</code></pre>
+
+<p>Alright, that&rsquo;s cool so what do we do with it?</p>
+
+<p>Well, sounds like a great way build a back end service and a separate front end application using something like AngularJS.</p>
+
+<p>Next article I will go into more detail.  Until then, you can check out the code for this series here: <a href="https://github.com/taion809/go-helloblog">HelloBlog</a></p>
+
+<p>As always, if there are errors or you have a suggestion send me a message.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="http://redstalker.com/blog/2013/11/09/docker-containing-madness/" data-toggle="tooltip" data-placement="top" title="Docker: Containing Madness">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="http://redstalker.com/blog/2014/11/27/preparing-integers-with-doctrine/" data-toggle="tooltip" data-placement="top" title="Preparing Integers With Doctrine">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
       
-
-<h3 id="content-license">Content license</h3>
-
-<p>All non-code blog content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons BY-NC-SA</a>.</p>
-
-<h3 id="code-license">Code license</h3>
-
-<p>All source code files and snippets found on this blog, unless otherwise explicitly noted, are licensed under the terms below.</p>
-
-<p>Copyright &copy; 2013, Nicholas Johns
-All rights reserved.</p>
-
-<p>Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:</p>
-
-<ul>
-<li><p>Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.</p></li>
-
-<li><p>Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.</p></li>
-
-<li><p>Neither the name of Redstalker, nor the names of its
-contributors may be used to endorse or promote products derived from
-this software without specific prior written permission.</p></li>
-</ul>
-
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &ldquo;AS IS&rdquo;
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-
-      
-        <div class="disqus-comments">
+      <div class="disqus-comments">
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'redstalker';
-    var disqus_identifier = 'http:\/\/redstalker.com\/license\/';
-    var disqus_title = 'License';
-    var disqus_url = 'http:\/\/redstalker.com\/license\/';
+    var disqus_identifier = 'http:\/\/redstalker.com\/blog\/2014\/04\/19\/getting-started-with-gorilla-mux\/';
+    var disqus_title = 'Getting Started with Gorilla MUX';
+    var disqus_url = 'http:\/\/redstalker.com\/blog\/2014\/04\/19\/getting-started-with-gorilla-mux\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -154,8 +188,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
+      </div>
       
+
     </div>
   </div>
 </div>

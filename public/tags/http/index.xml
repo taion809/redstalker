@@ -22,15 +22,15 @@
 
 &lt;p&gt;For this I will be using &lt;a href=&#34;http://www.gorillatoolkit.org/pkg/mux&#34;&gt;Gorilla MUX&lt;/a&gt;.  If you haven&amp;rsquo;t taken a look at the Gorilla toolkit yet I highly recommend it.  I really enjoy using it, the use as individual components really resonates with me and my style of coding.&lt;/p&gt;
 
-&lt;h3 id=&#34;setup:9a54963c5680f517156b952d129fa770&#34;&gt;Setup&lt;/h3&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
 
 &lt;p&gt;Setup for this is pretty fast, &lt;code&gt;go get github.com/gorilla/mux&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;the-meat-and-potatos:9a54963c5680f517156b952d129fa770&#34;&gt;The Meat and Potatos&lt;/h3&gt;
+&lt;h3 id=&#34;the-meat-and-potatos&#34;&gt;The Meat and Potatos&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;main.go&lt;/code&gt; for this is pretty simple, but if you haven&amp;rsquo;t used &lt;a href=&#34;http://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt; from the Golang standard library you might be scratching your head trying to figure out what&amp;rsquo;s going on.&lt;/p&gt;
 
-&lt;h5 id=&#34;example-main-go:9a54963c5680f517156b952d129fa770&#34;&gt;Example main.go&lt;/h5&gt;
+&lt;h5 id=&#34;example-main-go&#34;&gt;Example main.go&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
 

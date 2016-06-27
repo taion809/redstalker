@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>License</title>
+  <title>Preparing Integers With Doctrine</title>
 
   <meta name="author" content="Nicholas J" />
   
   
-  <meta name="description" content="License for the contents of this website and blog">
+  <meta name="description" content="How do you add integers as prepared statements to a select?">
   
 
   <meta name="generator" content="Hugo 0.16" />
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="http://redstalker.com/css/pygment_highlights.css" />
   
   
-  <meta property="og:title" content="License" />
+  <meta property="og:title" content="Preparing Integers With Doctrine" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/" />
   <meta property="og:image" content="" />
@@ -79,10 +79,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>License</h1>
+        <div class="post-heading">
+          <h1>Preparing Integers With Doctrine</h1>
       
       
+      
+      <span class="post-meta">Posted on November 27, 2014</span>
       
         </div>
       </div>
@@ -94,57 +96,83 @@
 
 
 
-<div class="container" role="main">
+<div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+          <p>I recently had an issue with binding an integer to a select statement with doctrine and postgresql.</p>
+
+<p>Given the following:</p>
+
+<pre><code>&lt;?php
+    $sql = 'INSERT INTO tree (ancestor, descendant)
+            SELECT cta.ancestor, :descendant
+            FROM tree AS cta
+            WHERE cta.descendant = :ancestor
+            UNION ALL
+            SELECT :descendant, :descendant';
+
+    $statement = $connection-&gt;prepare($sql);
+    $statement-&gt;bindValue(&quot;descendant&quot;, (int) $rootNode, 'integer');
+    $statement-&gt;bindValue(&quot;ancestor&quot;, (int) $ancestor, 'integer');
+    $statement-&gt;execute();
+?&gt;
+</code></pre>
+
+<p>I received the following error:</p>
+
+<pre><code>/**
+    PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42P08]: Ambiguous parameter: 7 ERROR:  inconsistent types deduced for parameter $1
+    LINE 2:                 SELECT cta.ancestor, $1
+                                                          ^
+    DETAIL:  integer versus text' in /vagrant_data/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:91
+*/
+</code></pre>
+
+<p>The solution was to explicitly cast it as an integer like so ::integer</p>
+
+<p>And here is the revised code:</p>
+
+<pre><code>&lt;?php
+    $sql = 'INSERT INTO tree (ancestor, descendant)
+            SELECT cta.ancestor, :descendant::integer
+            FROM tree AS cta
+            WHERE cta.descendant = :ancestor
+            UNION ALL
+            SELECT :descendant, :descendant';
+
+    $statement = $connection-&gt;prepare($sql);
+    $statement-&gt;bindValue(&quot;descendant&quot;, (int) $rootNode, 'integer');
+    $statement-&gt;bindValue(&quot;ancestor&quot;, (int) $ancestor, 'integer');
+    $statement-&gt;execute();
+?&gt;
+</code></pre>
+
+<p>If there are errors or you have a suggestion send me a message @taio.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="http://redstalker.com/blog/2014/04/19/getting-started-with-gorilla-mux/" data-toggle="tooltip" data-placement="top" title="Getting Started with Gorilla MUX">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="http://redstalker.com/blog/2015/12/06/install-php7/" data-toggle="tooltip" data-placement="top" title="Install PHP7">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
       
-
-<h3 id="content-license">Content license</h3>
-
-<p>All non-code blog content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons BY-NC-SA</a>.</p>
-
-<h3 id="code-license">Code license</h3>
-
-<p>All source code files and snippets found on this blog, unless otherwise explicitly noted, are licensed under the terms below.</p>
-
-<p>Copyright &copy; 2013, Nicholas Johns
-All rights reserved.</p>
-
-<p>Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:</p>
-
-<ul>
-<li><p>Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.</p></li>
-
-<li><p>Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.</p></li>
-
-<li><p>Neither the name of Redstalker, nor the names of its
-contributors may be used to endorse or promote products derived from
-this software without specific prior written permission.</p></li>
-</ul>
-
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &ldquo;AS IS&rdquo;
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-
-      
-        <div class="disqus-comments">
+      <div class="disqus-comments">
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'redstalker';
-    var disqus_identifier = 'http:\/\/redstalker.com\/license\/';
-    var disqus_title = 'License';
-    var disqus_url = 'http:\/\/redstalker.com\/license\/';
+    var disqus_identifier = 'http:\/\/redstalker.com\/blog\/2014\/11\/27\/preparing-integers-with-doctrine\/';
+    var disqus_title = 'Preparing Integers With Doctrine';
+    var disqus_url = 'http:\/\/redstalker.com\/blog\/2014\/11\/27\/preparing-integers-with-doctrine\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -154,8 +182,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
+      </div>
       
+
     </div>
   </div>
 </div>

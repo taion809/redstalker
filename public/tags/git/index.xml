@@ -26,7 +26,7 @@
 
 &lt;p&gt;For the following steps I executed them as the jenkins user, you may do it another way if you wish, this is simply how I did it.&lt;/p&gt;
 
-&lt;h4 id=&#34;create-ssh-keypair:54381799693cba0afbb8898aa24e4456&#34;&gt;Create SSH Keypair&lt;/h4&gt;
+&lt;h4 id=&#34;create-ssh-keypair&#34;&gt;Create SSH Keypair&lt;/h4&gt;
 
 &lt;p&gt;Creating an SSH keypair for use with jenkins and bitbucket:
 From the server:&lt;/p&gt;
@@ -40,7 +40,7 @@ chmod 0600 /output/path/privatekey
 &lt;p&gt;These sets of keys should be created with an empty password, for which you can simply press enter on the prompt.
 Configure SSH&lt;/p&gt;
 
-&lt;h4 id=&#34;create-a-config-to-map-the-host-and-identity-files:54381799693cba0afbb8898aa24e4456&#34;&gt;Create a config to map the host and identity files&lt;/h4&gt;
+&lt;h4 id=&#34;create-a-config-to-map-the-host-and-identity-files&#34;&gt;Create a config to map the host and identity files&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;vim /var/lib/jenkins/.ssh/config
 &lt;/code&gt;&lt;/pre&gt;
@@ -54,7 +54,7 @@ Configure SSH&lt;/p&gt;
     IdentitiesOnly yes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;add-ssh-public-key-to-bitbucket:54381799693cba0afbb8898aa24e4456&#34;&gt;Add SSH public key to bitbucket&lt;/h4&gt;
+&lt;h4 id=&#34;add-ssh-public-key-to-bitbucket&#34;&gt;Add SSH public key to bitbucket&lt;/h4&gt;
 
 &lt;p&gt;At this point you have created your public and private keypair and created a config file to map the identity file to a host. Now, the public key needs to be added to your bitbucket account, the steps to accomplish this (should it change in the future) can be found on the bitbucket.org website but at the time of this writing you can&lt;/p&gt;
 
@@ -69,7 +69,7 @@ Configure SSH&lt;/p&gt;
 &lt;li&gt;Click Add Key&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;ssh-test-connection:54381799693cba0afbb8898aa24e4456&#34;&gt;SSH Test Connection&lt;/h4&gt;
+&lt;h4 id=&#34;ssh-test-connection&#34;&gt;SSH Test Connection&lt;/h4&gt;
 
 &lt;p&gt;Now, back to your server, you will need to approve the host. The easiest way is to simply try to connect.&lt;/p&gt;
 
@@ -90,7 +90,7 @@ Connection to bitbucket.org closed.
 
 &lt;p&gt;Now that you have verified you can connect to bitbucket via ssh you need to install git, the jenkins git plugin, and configure the global settings for git.&lt;/p&gt;
 
-&lt;h4 id=&#34;configure-git:54381799693cba0afbb8898aa24e4456&#34;&gt;Configure Git&lt;/h4&gt;
+&lt;h4 id=&#34;configure-git&#34;&gt;Configure Git&lt;/h4&gt;
 
 &lt;p&gt;Git: on debian / ubuntu you can simply&lt;/p&gt;
 
@@ -108,7 +108,7 @@ git config --global user.name &amp;quot;jenkins&amp;quot;
 
 &lt;p&gt;Obviously replace those values with what you like.&lt;/p&gt;
 
-&lt;h4 id=&#34;configure-the-jenkins-job:54381799693cba0afbb8898aa24e4456&#34;&gt;Configure the Jenkins Job&lt;/h4&gt;
+&lt;h4 id=&#34;configure-the-jenkins-job&#34;&gt;Configure the Jenkins Job&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Login to your Jenkins website&lt;/li&gt;
